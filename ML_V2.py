@@ -19,7 +19,7 @@ from imblearn.under_sampling import RandomUnderSampler
 from imblearn.over_sampling import SMOTE
 from sklearn import tree
 
-USERFOLDER = 'C:/Users/nacke08/OneDrive - Safeway, Inc/Documents/Projects/Machine_Learning/GENERAL_ML_PROGRAM'
+USERFOLDER = ''
 PROB_PREDICTION = 1 #OR 0
 TEST_SIZE = 0.35 #0.0-1.0  #0.35 for CASE
 TRAIN_SIZE = 0.65
