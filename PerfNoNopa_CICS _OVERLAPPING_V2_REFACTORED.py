@@ -18,7 +18,7 @@ BUTTON = '#33CC00'
 ACTIVEBUTTON = '#339900'
 BUTTONFRAME = '#D3D3D3'
 GRAPHFRAME = '#A9A9A9'
-USERFOLDER = 'C:/Users/nacke08/OneDrive - Safeway, Inc/Documents/Projects'
+USERFOLDER = ''
 FILENAME = '\CLEANED_DATA.csv' #OUTPUT FILE NAME
 MAX_DIFF = 0.9
 MIN_DIFF = 0.1
@@ -37,15 +37,15 @@ class SFConnection:
         self.connection = ''
 
     def open_conn(self):
-        username = self.name + '@safeway.com'
+        username = self.name
 
         engine = create_engine(URL(
-        account = 'abs_edw_prd.west-us-2.azure',
+        account = '',
         user = username,
         password = '',
         database = 'DW_PRD',
         schema = '',
-        warehouse = 'PROD_ALLOWANCE_BILLING_WH',
+        warehouse = '',
         role='',
         authenticator='externalbrowser'
         ))
@@ -318,7 +318,7 @@ def CreateSnowflakeQueries(SDATE,EDATE):
     #QueryList = ['MKDN_QTY_0_1']
     sqlList = []
     for query in QueryList: 
-        filelocation = "C:/Users/nacke08/OneDrive - Safeway, Inc/Documents/Projects/PerfNoNopa_GUI/SQL/Python_Queries_CICS_V4/" + query + ".sql"
+        filelocation = "/" + query + ".sql"
         text_file = open(filelocation, "r")
         sqlString = text_file.read()
         sqlString = sqlString.replace("(&SDATE)",SDATE)
@@ -329,7 +329,7 @@ def CreateSnowflakeQueries(SDATE,EDATE):
         sqlList.append(sqlString)
     
     #write the strings to a file location
-    with open('C:/Users/nacke08/OneDrive - Safeway, Inc/Documents/Projects/PerfNoNopa_GUI/SQL/Python_Queries_CICS_V4/README.txt', 'w') as f:
+    with open('E.txt', 'w') as f:
         for line in sqlList:
             f.write(line)
             f.write('\n\n\n\n')
